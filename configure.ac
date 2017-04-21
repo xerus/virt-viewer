@@ -118,7 +118,7 @@ AC_ARG_WITH([libvirt],
     AS_HELP_STRING([--without-libvirt], [Ignore presence of libvirt and disable it]))
 
 AS_IF([test "x$with_libvirt" != "xno" && test "x$with_libvirt" != "xyes"],
-      [PKG_CHECK_EXISTS([libvirt >= $LIBVIRT_REQUIRED],
+      [PKG_CHECK_EXISTS([libvirt >= $LIBVIRT_REQUIRED libvirt-glib-1.0 >= $LIBVIRT_GLIB_REQUIRED],
                         [with_libvirt=yes], [with_libvirt=no])])
 
 AS_IF([test "x$with_libvirt" = "xyes"],
